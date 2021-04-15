@@ -76,9 +76,9 @@ class Printer {
                 .map((it) => it.joinFunctionDeclaration)
                 .join(",\n"))
             ..writeln(",) {")
-            ..writeln("$typeParam ${typeParam.toLowerCase()};")
+            ..writeln("$typeParam? ${typeParam.toLowerCase()};")
             ..writeln(joinTypeCheckStatement(typeParamData))
-            ..writeln("return ${typeParam.toLowerCase()};")
+            ..writeln("return ${typeParam.toLowerCase()}!;")
             ..writeln("}"))
           .toString();
     }

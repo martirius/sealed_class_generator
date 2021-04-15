@@ -13,10 +13,10 @@ class GeneratedCodeData {
   final String joinFunctionDeclaration;
 
   GeneratedCodeData(this.type)
-      : continuedFunction = "$continuedMethodName$type(this);",
+      : continuedFunction = "$continuedMethodName$type(this as $type);",
         continuedFunctionDeclaration =
             "Function($type) $continuedMethodName$type",
-        joinFunction = "$joinMethodName$type(this);",
+        joinFunction = "$joinMethodName$type(this as $type);",
         joinFunctionDeclaration =
             "$typeParam Function($type) $joinMethodName$type";
 }
@@ -24,9 +24,7 @@ class GeneratedCodeData {
 class TypeParameterTransformer {
   TypeParameterTransformer._();
 
-  static List<GeneratedCodeData>? toGeneratedCodeData(
-          final List<String>? typeParameters) =>
-      typeParameters
-          ?.map((it) => GeneratedCodeData(it))
-          .toList(growable: false);
+  static List<GeneratedCodeData> toGeneratedCodeData(
+          final List<String> typeParameters) =>
+      typeParameters.map((it) => GeneratedCodeData(it)).toList(growable: false);
 }

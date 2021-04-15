@@ -23,6 +23,9 @@ class Repo {
           case 3:
             d = FlutterLogoData(Duration(seconds: 3));
             break;
+          default:
+            d = BoringData();
+            break;
         }
         return d;
       }).toList(growable: false);

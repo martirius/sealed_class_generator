@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({Key key}) : super(key: key);
+  MyHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class MyHomePage extends StatelessWidget {
 class MyContainer extends StatelessWidget {
   final ContainerData data;
 
-  MyContainer(this.data, {Key key}) : super(key: key);
+  MyContainer(this.data, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) =>
@@ -63,7 +63,7 @@ class MyContainer extends StatelessWidget {
 class MyText extends StatelessWidget {
   final TextData data;
 
-  const MyText(this.data, {Key key}) : super(key: key);
+  const MyText(this.data, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Text(data.text);
@@ -72,7 +72,7 @@ class MyText extends StatelessWidget {
 class MyBoringWidget extends StatelessWidget {
   final BoringData data;
 
-  const MyBoringWidget(this.data, {Key key}) : super(key: key);
+  const MyBoringWidget(this.data, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) =>
@@ -82,7 +82,7 @@ class MyBoringWidget extends StatelessWidget {
 class MyFlutterLogo extends StatelessWidget {
   final FlutterLogoData data;
 
-  const MyFlutterLogo(this.data, {Key key}) : super(key: key);
+  const MyFlutterLogo(this.data, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => FlutterLogo(duration: data.duration);
