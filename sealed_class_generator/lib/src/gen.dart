@@ -19,9 +19,9 @@ class SealedGenerator extends GeneratorForAnnotation<Sealed> {
   ) {
     final typeParams = annotation.objectValue
         .getField("types")
-        .toListValue()
-        .map((dartObj) => dartObj.toTypeValue())
-        .map((type) => type.getDisplayString(withNullability: true))
+        ?.toListValue()
+        ?.map((dartObj) => dartObj.toTypeValue())
+        .map((type) => type!.getDisplayString(withNullability: true))
         .toList();
 
     final visitor = SealedClassVisitor();
@@ -31,8 +31,8 @@ class SealedGenerator extends GeneratorForAnnotation<Sealed> {
 
     final typeParameterData =
         TypeParameterTransformer.toGeneratedCodeData(typeParams);
-    final printerOutput =
-        Printer.constructOutput(visitor.className, typeParameterData);
+    final printerOutput = Printer.constructOutput(visitor.className,
+        typeParameterData!); //TODO: typeParameterData! fix correctly null safety
 
     return printerOutput.toString();
   }
