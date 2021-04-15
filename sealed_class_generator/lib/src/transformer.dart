@@ -24,6 +24,9 @@ class GeneratedCodeData {
 class TypeParameterTransformer {
   TypeParameterTransformer._();
 
-  static List<GeneratedCodeData> toGeneratedCodeData(final List<String> typeParameters) =>
-      typeParameters.map((it) => GeneratedCodeData(it)).toList(growable: false);
+  static List<GeneratedCodeData>? toGeneratedCodeData(
+          final List<String>? typeParameters) =>
+      typeParameters
+          ?.map((it) => GeneratedCodeData(it))
+          .toList(growable: false);
 }
