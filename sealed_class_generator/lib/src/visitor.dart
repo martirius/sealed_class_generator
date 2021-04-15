@@ -5,6 +5,6 @@ class SealedClassVisitor extends SimpleElementVisitor {
   String className = null;
 
   @override
-  visitConstructorElement(ConstructorElement element) =>
-      className = element.type.returnType.name;
+  visitConstructorElement(ConstructorElement element) => className =
+      element.type.returnType.getDisplayString(withNullability: true);
 }
