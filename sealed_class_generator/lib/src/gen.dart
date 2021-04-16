@@ -21,7 +21,7 @@ class SealedGenerator extends GeneratorForAnnotation<Sealed> {
         .getField("types")!
         .toListValue()!
         .map((dartObj) => dartObj.toTypeValue())
-        .map((type) => type!.getDisplayString(withNullability: false))
+        .map((type) => type!.element!.name!)
         .toList();
 
     final visitor = SealedClassVisitor();
@@ -32,7 +32,7 @@ class SealedGenerator extends GeneratorForAnnotation<Sealed> {
     final typeParameterData =
         TypeParameterTransformer.toGeneratedCodeData(typeParams);
     final printerOutput =
-        Printer.constructOutput(visitor.className, typeParameterData);
+        Printer.constructOutput(visitor.className!, typeParameterData);
 
     return printerOutput.toString();
   }
